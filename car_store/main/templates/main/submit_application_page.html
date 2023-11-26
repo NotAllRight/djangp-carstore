@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Submit application for the purchase of {{ car.title }}, {{ car.year}}
+{% endblock %}
+
+{% block header_buttons %}
+	<li><a href="{% url 'catalog' %}">Catalog</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contacts' %}">Contacts</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <div class="form">
+            <form method="post" action="{% url 'sub_app' car_id=car.id %}">
+                {% csrf_token %}
+                <div class="form-header">
+                    <h2>Submit application</h2>
+                </div>
+
+                <div class="form-name">
+                    <span>Your name</span><br>
+                    <input type="text" name="name" maxlength="100" placeholder="Your name" pattern="[A-Za-zА-Яа-яЁё ]*" title="Only Cyrillic and Latin">
+                </div>
+
+                <div class="form-phone">
+                    <span>Your phone</span><br>
+                    <span class="phone-start">+38</span><input type="number" name="phone" placeholder="(123) 123-12-12" oninput="limitDigits(this, 10)">
+                </div>
+
+                <div class="form-text">
+                    <label for="message">Your Message</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                </div>
+
+                <div class="form-button">
+                    <button type="submit">Submit</button>
+                </div>
+
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function limitDigits(input, maxLength) {
+            let inputValue = input.value.replace(/\D/g, ''); // Оставляем только цифры
+            if (inputValue.length > maxLength) {
+                inputValue = inputValue.slice(0, maxLength); // Обрезаем до maxLength цифр
+            }
+            input.value = inputValue;
+        }
+    </script>
+{% endblock %}

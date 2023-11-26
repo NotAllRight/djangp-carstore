@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+	CarStore
+{% endblock %}
+
+{% block header_buttons %}
+	<li><a href="{% url 'catalog' %}">Catalog</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contacts' %}">Contacts</a></li>
+{% endblock %}
+
+{% block content %}
+	<div class="first-9-els">
+		<div class="header__first-9-els">
+			<h1>Cars in stock</h1>
+		</div>
+		
+		<div class="container-elements">
+			{% for el in cars %}
+				<div class="elements">
+					<a href="{% url 'car' car_id=el.id %}">
+						<img src="{{ el.img.url }}">
+						<h2>
+							<span class="elements-title">{{ el.title }}</span>
+							<span class="elements-year">{{ el.year }}</span>
+						</h2>
+						<div class="elements-price">
+							<span">{{ el.price }}</span>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="container-button">
+		<a href="{% url 'catalog' %}"><button class="button"><span>View all cars</span></button></a>
+	</div>
+{% endblock %}

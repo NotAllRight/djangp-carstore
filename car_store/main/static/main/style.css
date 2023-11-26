@@ -1,0 +1,522 @@
+/* Normalize css */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{height:100%}
+body{line-height:1;}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+/* Styles */
+
+/* base.html */
+html {
+    /* font-family: "YS Text", "Arial"; */
+    font-family: Panton,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.navigation {
+    width: 100%;
+    position: relative;
+    font-size: 17px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 8%;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+.logo span {
+    padding: 0 7px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 27px;
+}
+
+.logo b {
+    font-weight: 700;
+}
+
+.right ul {
+    display: flex;
+}
+
+.right li {
+    padding: 0.5rem;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.right a:hover {
+    color: #10be7e;
+}
+
+.opened {
+    background-color: #69f0be50;
+}
+
+.opened a {
+    color: #10be7e;
+}
+
+.bottom {
+    width: 100%;
+    background-color: rgba(175, 173, 173, 0.303);
+    display: flex;
+}
+
+.bottom-info-container {
+    padding: 50px 8%;
+}
+
+.img-bottom-container {
+    padding-bottom: 20px;
+}
+
+.img-bottom-container a {
+    display: flex;
+    align-items: center;
+}
+
+.img-bottom-container span {
+    font-size: 20px;
+    padding-left: 3px;
+    color: rgb(76, 76, 76);
+}
+
+.img-bottom-container b {
+    font-weight: 700;
+}
+
+.bottom-info {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #495057;
+}
+
+.navigation-block {
+    padding-top: 50px;
+}
+
+.bottom-span-nav {
+    padding-bottom: 14px;
+}
+
+.navigation-block span {
+    color: #495057;
+    line-height: 1.8;
+}
+
+.navigation-block b {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.navigation-block a span:hover {
+    color: black;
+}
+
+/* index.html */
+.first-9-els {
+    padding: 2% 8%;
+}
+
+.header__first-9-els {
+    padding-bottom: 30px;
+}
+
+.header__first-9-els h1 {
+    font-family: "YS Text", "Arial";
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.container-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.elements {
+    flex: 0 0 calc(33.464% - 15px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(175, 173, 173, 0.303);
+    overflow: hidden;
+    margin-right: 20px; /* Отступ справа между элементами */
+}
+
+.container-elements :nth-child(3n) {
+    margin-right: 0; /* Убираем отступ справа у каждого третьего элемента */
+}
+
+.elements img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+}
+
+.elements h2 {
+    padding: 20px 20px 10px 20px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.elements-year {
+    color: #495057;
+}
+
+.elements-price {
+    font-size: 20px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    color: #6c757d;
+}
+
+.container-button {
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 15px 35px;
+    border: none;
+    background-color: #59f2ba;
+}
+
+.button:hover {
+    background-color: #51d6a6;
+}
+
+/* catalog.html */
+.all-cars-container {
+    padding: 35px 8%;
+}
+
+.all-cars-container-header {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.sold-cars-container {
+    padding: 35px 8%;
+}
+
+.sold-cars-container-header {
+    font-family: "YS Text", "Arial";
+    font-size: 45px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.sold-container-elements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+.sold-elements {
+    flex: 0 0 calc(25% - 15px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: rgba(175, 173, 173, 0.303);
+    overflow: hidden;
+    margin-right: 20px; /* Отступ справа между элементами */
+}
+
+.sold-container-elements :nth-child(4n) {
+    margin-right: 0; /* Убираем отступ справа у каждого третьего элемента */
+}
+
+.sold-elements img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.sold-elements h2 {
+    padding: 20px 20px 10px 20px;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+/* car.html */
+.car-info-container {
+    padding: 30px 8%;
+}
+
+.car-info-header {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.car-info-header-price {
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+.car-info-img {
+    position: relative;
+}
+
+.car-info-img img {
+    height: 500px;
+    width: 800px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.sold-span-container {
+    position: absolute;
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.604);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sold-span {
+    font-weight: 700;
+    font-size: 130px;
+    color: red;
+}
+
+.car-info-description-header {
+    padding: 35px 0;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.param-name {
+    padding-right: 10px;
+    color: rgb(130, 130, 130);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.value {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* about.html */
+.about-info-container {
+    padding: 30px 8% 50px 8%;
+}
+
+.about-info-header h1 {
+    font-weight: 700;
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+
+.about-info-text {
+    padding-bottom: 30px;
+}
+
+.about-info-text span {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* contacts.html */
+.contacts-container {
+    display: flex;
+    padding: 35px 8% 60px 8%;
+}
+
+.contacts-header {
+    padding: 30px 8% 0 8%;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.icon-svg {
+    width: 1em;
+    vertical-align: middle;
+}
+
+.contacts {
+    width: 30%;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color:rgba(175, 173, 173, 0.5);
+    margin: 10px 0;
+}
+
+.contacts-element {
+    line-height: 1.5;
+}
+
+.place {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.phone {
+    color: #35383b;
+}
+
+.job-time-info {
+    color: #6c757d;
+    font-size: 14px;
+
+}
+
+.thanks-block {
+    width: 300px;
+    height: 320px;
+    background-color: #51d6a58f;
+    margin-left: 300px;
+    border-radius: 20px;
+}
+
+.thanks-block {
+    text-align: center;
+}
+
+.thanks-block-image {
+    margin-top: 30px;
+}
+
+.thanks-block-image img {
+    width: 300px;
+    object-fit: cover;
+}
+
+.thanks-block-text {
+    margin-top: 20px;
+}
+
+.thanks-block span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #35383b;
+}
+
+/* submit_application_page.html */
+.form-container {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    background-color: #51d6a58f;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.form-header {
+    font-weight: 700;
+    font-size: 30px;
+    color: #35383b;
+    padding-bottom: 20px;
+}
+
+.form-name, .form-phone, .form-text {
+    line-height: 1.5;
+    font-size: 15px;
+    color: #495057;
+}
+
+.form-name input, .form-phone input, .form-text textarea {
+    border-radius: 10px;
+    border: 1px solid #495057;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.form-name input:focus, .form-phone input:focus, .form-text textarea:focus {
+    outline: 2px solid #0d885b;
+}
+
+.form-phone input {
+    padding-left: 50px;
+}
+
+.phone-start {
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 5px;
+    color: black;
+    font-size: 19px;
+}
+
+.form-name input{
+    width: 240px;
+}
+
+.form-phone input {
+    width: 205px;
+}
+
+.form-text textarea {
+    width: 350px;
+    height: 110px;
+}
+
+.form-button {
+    padding-top: 15px;
+}
+
+.form-button button {
+    border: 0.1em solid #49505753;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 13px 25px;
+    letter-spacing: 1px;
+    background-color: rgb(225, 223, 223);
+    color: #495057;
+}
+
+.form-button button:hover {
+    background-color: rgb(205, 203, 203);
+}
+
+/* Убираем стрелочки для изменения числа на 1
+    вперед-назад у поля input с типом числа */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+

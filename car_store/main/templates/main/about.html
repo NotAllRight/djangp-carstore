@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    About CarStore
+{% endblock %}
+
+{% block header_buttons %}
+	<li><a href="{% url 'catalog' %}">Catalog</a></li>
+	<li class="opened"><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contacts' %}">Contacts</a></li>
+{% endblock %}
+
+{% block content %}
+	<div class="about-info-container">
+		<div class="about-info-header">
+			<h1>About CarStore</h1>
+		</div>
+
+		<div class="about-info-text">
+			<span>The CarStore company was founded in 2023 as a service for the selection of used cars for customers who want to receive high-quality and prompt services for the inspection, evaluation and verification of cars on the market.</span><br><br>
+			<span>Recently, we have started offering our customers brand new cars. This will expand your range of choices. We are trying just for you.</span>
+		</div>
+
+		<div class="about-info-description">
+			<span class="param-name">Name:</span><span class="value">LIMITED LIABILITY COMPANY "CARSTOR"</span><br>
+			<span class="param-name">Owner:</span><span class="value">Kvitko M.O.</span><br>
+			<span class="param-name">Date of foundation:</span><span class="value">november 2023</span><br>
+			<span class="param-name">Email:</span><span class="value">carstore.123@gmail.com</span><br>
+			<span class="param-name">Phone number:</span><span class="value">+ 38 (093) 162-00-19</span><br>
+			<span class="param-name">Adress:</span><span class="value">Zaporizhzhia, Selyanskaya str. 51</span>
+		</div>
+	</div>
+{% endblock %}

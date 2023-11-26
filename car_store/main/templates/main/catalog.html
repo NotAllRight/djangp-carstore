@@ -1,0 +1,63 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+	Buy a car
+{% endblock %}
+
+{% block header_buttons %}
+	<li class="opened"><a href="{% url 'catalog' %}">Catalog</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contacts' %}">Contacts</a></li>
+{% endblock %}
+
+{% block content %}
+	<div class="all-cars-container">
+		<div class="all-cars-container-header">
+			<span>Buy a car</span>
+		</div>
+
+		<div class="container-elements">
+			{% for el in cars %}
+				{% if not el.is_sold %}
+					<div class="elements">
+						<a href="{% url 'car' car_id=el.id %}">
+							<img src="{{ el.img.url }}">
+							<h2>
+								<span class="elements-title">{{ el.title }}</span>
+								<span class="elements-year">{{ el.year }}</span>
+							</h2>
+							<div class="elements-price">
+								<span">{{ el.price }}</span>
+							</div>
+						</a>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+	{% if sold_cars %}
+		<div class="sold-cars-container">
+			<div class="sold-cars-container-header">
+				<span>Sold cars</span>
+			</div>
+
+			<div class="sold-container-elements">
+				{% for el in sold_cars %}
+					<div class="sold-elements">
+						<a href="{% url 'car' car_id=el.id %}">
+							<img src="{{ el.img.url }}">
+							<h2>
+								<span class="elements-title">{{ el.title }}</span>
+								<span class="elements-year">{{ el.year }}</span>
+							</h2>
+							<div class="elements-price">
+								<span">{{ el.price }}</span>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

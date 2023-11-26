@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Buy a {{ car.title }}
+{% endblock %}
+
+{% block header_buttons %}
+	<li><a href="{% url 'catalog' %}">Catalog</a></li>
+	<li><a href="{% url 'about' %}">About</a></li>
+	<li><a href="{% url 'contacts' %}">Contacts</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="car-info-container">
+        <div class="car-info-header">
+            <span>{{ car.title }},</span>
+            <span>{{ car.year }}</span>
+            {% if header_price != 'No price' %}
+                <span class="car-info-header-price">{{ car.header_price }}</span>
+            {% endif %}
+        </div>
+
+        <div class="car-info-img">
+            <img src="{{ car.img.url }}" alt="{{ car.title }}">
+            {% if car.is_sold %}
+                <div class="sold-span-container">
+                    <span class="sold-span">SOLD</span>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="car-info-description">
+            <div class="car-info-description-header">
+                <span>General description of the car</span>
+            </div>
+            <span class="param-name">Year</span><span class="value">{{ car.year }}</span><br>
+            <span class="param-name">Color</span><span class="value">{{ car.color }}</span><br>
+            <span class="param-name">Coloration</span><span class="value">{{ car.coloration }}</span><br>
+            <span class="param-name">Kilometrage</span><span class="value">{{ car.kilometrage }}</span><br>
+            <span class="param-name">Condition</span><span class="value">{{ car.condition }}</span><br>
+            <span class="param-name">Price in dollars</span><span class="value">{{ car.price }}</span>
+        </div>
+    </div>
+
+    {% if not car.is_sold %}
+        <div class="container-button">
+            <a href="{% url 'sub_app' car_id=car.id %}"><button class="button"><span>Submit application</span></button></a>
+        </div>
+    {% endif %}
+{% endblock %}

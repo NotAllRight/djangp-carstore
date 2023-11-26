@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %} {% endblock %}</title>
+	<link rel="stylesheet" href="/static/main/style.css">
+</head>
+
+<body>
+
+	<div class="navigation">
+		<nav>
+
+			<div class="left">
+				<a href="{% url 'home' %}">
+					<div class="logo">
+						<img src="/static/main/car_logo.png" alt="logo" width="45">
+						<span><b>car</b>store</span>
+					</div>
+				</a>
+			</div>
+
+			<div class="right">
+				<ul>
+					{% block header_buttons %}
+
+                    {% endblock %}
+				</ul>
+			</div>
+
+		</nav>
+	</div>
+
+	{% block content %}
+
+    {% endblock %}
+
+	<div class="bottom">
+		<div class="bottom-info-container">
+			<div class="img-bottom-container">
+				<a href="{% url 'home' %}"><img src="/static/main/car_logo_gray.png" alt="Logo" width="40"><span><b>car</b>store</span></a>
+			</div>
+			<span class="bottom-info">©️ 2023-2023, LLC «CARSTORE»</span><br>
+			<span class="bottom-info">All rights reserved</span><br>
+			<span class="bottom-info">All information provided on the website regarding cars and service is for informational purposes only and is not a public offer.</span>
+		</div>
+
+		<div class="navigation-block">
+			<div class="bottom-span-nav">
+				<span><b>Navigation</b></span>
+			</div>
+			<a href="{% url 'catalog' %}"><span>Catalog</span></a><br>
+			<a href="{% url 'about' %}"><span>About</span></a><br>
+			<a href="{% url 'contacts' %}"><span>Contacts</span></a>
+		</div>
+	</div>
+
+</body>
+
+</html>
